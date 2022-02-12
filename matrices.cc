@@ -6,9 +6,9 @@ using namespace std;
 
 int main() {
 
-    int a[] = {1, 2, 3};
-    int b[] = {4, 5, 6};
-    int c[] = {7, 8, 9};
+    int a[] = {1, 1, 1};
+    int b[] = {1, 1, 1};
+    int c[] = {1, 1, 1};
     int* matrix[] = {a, b, c};
 
     for (int i = 0; i < 3; i++) {
@@ -17,6 +17,46 @@ int main() {
         }
         cout << endl;
     }
+
+    cout << endl;
+
+    int d[] = {2, 2, 2};
+    int e[] = {2, 2, 2};
+    int f[] = {2, 2, 2};
+    int* matrix2[] = {d, e, f};
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matrix2[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << endl;
+
+    int* matrix_result[] = {};
+    int total = 0, result;
+    
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            
+        result = matrix[i][j] * matrix2[j][i];
+        total += result;
+        }
+    }
+    
+
+        cout << total;
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; i < 3; j++) {
+                matrix_result[i][j] = total;
+            }
+        }
+
+
+
+
 
     return 0;
 }
