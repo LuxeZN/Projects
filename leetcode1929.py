@@ -1,3 +1,6 @@
+#Author: Zach Naymik
+#Date: February 21, 2022
+
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
         ans = [0] * (2 * len(nums))
