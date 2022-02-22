@@ -1,3 +1,10 @@
+#Author: Zach Naymik
+#Date: February 20, 2022
+#Description: This program takes a zipcode entered by a user and transforms into a bar code value, 
+#             this is what happens in a real post office, and we seek to replicate that here.
+
+#Function that gets the code for an individual digit
+
 def getDigitCode(digit):
     digit_code = ""
     if (digit == '1'):
@@ -22,6 +29,9 @@ def getDigitCode(digit):
         digit_code = "||:::"
     return digit_code
 
+
+#Function that checks to see if the given zipcode is all digits or not
+
 def isDigits(zip):
     counter = 0
     t_or_f = True
@@ -34,8 +44,12 @@ def isDigits(zip):
     else:
         return True
 
+#Function that returns the check value for the end of the zipcode barcode
+
 def getCheckDigitValue(sum):
     return (10 - (sum % 10))
+
+#Function that gets the sum of all the numbers in the zip in order to get the check digit
 
 def getSumNumbers(zip):
     for i in zip:
@@ -44,6 +58,8 @@ def getSumNumbers(zip):
         actual_num = ascii_value - 48
         total_value += actual_num
     return total_value
+
+#Function that gets the barcode for the entire zipcode
 
 def getWholeZip(zip):
     full_code = "|"
@@ -81,10 +97,17 @@ def getWholeZip(zip):
 
     return full_code   
 
+
+#Initialize the more codes string in order to enter the while loop
+
 more_codes = ' '
 
+#While loop that continues if the user wished to enter more zipcodes
+
 while more_codes != 'n':
+    #Initialize sentinel value in order to enter the while loop
     sentinel_value = True
+    #While loop used to verify that the input follows our conditions
     while sentinel_value == True:
         user_zip = input("Enter a zip code: ")
         if (len(user_zip) < 5 or len(user_zip) > 5):      
@@ -95,19 +118,19 @@ while more_codes != 'n':
             sentinel_value = True
         else:
             sentinel_value = False
-
+    #Calls the getWholeZip function and stores the whole zipcode barcode into the whole_zip variable
     whole_zip = getWholeZip(user_zip)
-
+    #Prints out the zipcode barcode to the user
     print(f"Code: {whole_zip}")
-
+    #Resets the more_codes variable to nothing to allow the while loop to be entered
     more_codes = ' '
-
+    #While loop that asks the user if they wish to enter more zipcodes and verifies they entered a valid choice
     while (more_codes != 'y' and more_codes != 'n'):
         more_codes = input("More codes (y/n)? ")
         if (more_codes != 'y' and more_codes != 'n'):
             print("Error: Invalid selection")
 
-
+#Prints exit prompt if user decides to not enter any more codes
 print("Goodbye!")
 
 
