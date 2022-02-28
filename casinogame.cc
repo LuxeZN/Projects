@@ -1,3 +1,7 @@
+//Author: Zach Naymik
+//Date: February 10, 2022
+//Description: This program allows the user to play a gambling game in which they try to guess a number to win 10x their money
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -16,6 +20,8 @@ int main()
     char play_again;
 
     cout << "Welcome to the Casino Game" << endl;
+
+        //Loop to get balance deposit and verify that amount is valid
 
         do
         {

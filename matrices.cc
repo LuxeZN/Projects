@@ -34,29 +34,27 @@ int main() {
 
     cout << endl;
 
-    int* matrix_result[] = {};
+    int g[] = {0, 0, 0};
+    int h[] = {0, 0, 0};
+    int i[] = {0, 0, 0};
+    int* matrix_result[] = {g, h, i};
     int total = 0, result;
     
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            
-        result = matrix[i][j] * matrix2[j][i];
-        total += result;
+            for (int k = 0; k < 3; k++) {
+                result = (matrix[i][j] * matrix2[j][i]);
+                matrix_result[i][j] += result;
+            } 
         }
     }
-    
 
-        cout << total;
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; i < 3; j++) {
-                matrix_result[i][j] = total;
-            }
+for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matrix_result[i][j] << " ";
         }
-
-
-
-
+        cout << endl;
+    }
 
     return 0;
 }
