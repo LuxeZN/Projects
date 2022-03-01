@@ -1,7 +1,7 @@
 #Author: Zach Naymik
 #Date: February 20, 2022
 #Description: This program takes a zipcode entered by a user and transforms into a bar code value, 
-#             this is what happens in a real post office, and we seek to replicate that here.
+#             this is what happens in a real post office, and we are trying to replicate that here.
 
 #Function that gets the code for an individual digit
 
