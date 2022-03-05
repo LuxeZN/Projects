@@ -1,3 +1,6 @@
+//Author: Zach Naymik
+//Date: February 9, 2022
+
 #include <iostream>
 
 using namespace std;
