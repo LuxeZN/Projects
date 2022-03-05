@@ -1,3 +1,6 @@
+//Author: Zach Naymik
+//Date: February 13, 2022
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
